@@ -1,0 +1,77 @@
+{
+  "name": "@new-inventor/create-app",
+  "version": "1.0.0",
+  "description": "default app template",
+  "main": "index.tsx",
+  "repository": "git@github.com:new-inventor/bestretailer-admin-panel.git",
+  "author": "George Ionov <newinventor20@gmail.com>",
+  "license": "MIT",
+  "bin": {
+    "create-new-app": "./dist/create.js"
+  },
+  "scripts": {
+    "start": "webpack serve --port 3000 --mode development --open --hot",
+    "build": "webpack --mode production --stats-children",
+    "code-style:fix": "yarn eslint:fix && yarn prettier:write",
+    "eslint": "eslint --ext .jsx,.js,.ts,.tsx src/",
+    "eslint:fix": "eslint --ext .jsx,.js,.ts,.tsx --fix src/",
+    "prettier:write": "prettier --write src/",
+    "tsc": "tsc --noEmit --skipLibCheck",
+    "lint": "yarn eslint && yarn tsc"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "post-merge": "git-notify --prefix \"@all\" --color \"green\" merge $HUSKY_GIT_PARAMS",
+      "post-rewrite": "git-notify --prefix \"@all\" --color \"green\" rewrite $HUSKY_GIT_PARAMS",
+      "post-checkout": "git-notify --prefix \"@all\" --color \"green\" checkout $HUSKY_GIT_PARAMS"
+    }
+  },
+  "eslintConfig": {
+    "extends": "airbnb"
+  },
+  "lint-staged": {
+    "src/**/*.(jsx|js|ts|tsx)": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "ejs": "^3.1.6",
+    "hygen": "^6.1.0",
+    "inquirer": "^8.1.0",
+    "shelljs": "^0.8.4",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.5",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.14.5",
+    "@babel/preset-env": "^7.14.5",
+    "@babel/preset-typescript": "^7.14.5",
+    "@types/ejs": "^3.0.6",
+    "@types/inquirer": "^7.3.1",
+    "@types/node": "^15.12.2",
+    "@types/shelljs": "^0.8.8",
+    "@typescript-eslint/eslint-plugin": "^4.26.1",
+    "@typescript-eslint/parser": "^4.26.1",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "eslint": "^7.28.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-typescript": "^12.3.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "file-loader": "^6.2.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "typescript": "^4.3.2",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  }
+}

@@ -1,0 +1,8 @@
+dist
+node_modules
+.eslintrc.js
+.eslintignore
+.prettierignore
+.prettierrc
+webpack.config.js
+yarn.lock
