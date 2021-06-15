@@ -1,9 +1,6 @@
-assets
 serviceWorker.ts
 src/setupProxy.js
-build
 node_modules
-scripts
 .eslintrc.js
 .eslintignore
 .prettierignore

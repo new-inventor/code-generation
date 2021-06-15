@@ -1,0 +1,12 @@
+serviceWorker.ts
+src/setupProxy.js
+dist
+node_modules
+.eslintrc.js
+.eslintignore
+.prettierignore
+.prettierrc
+.stylelintrc.js
+postcss.config.js
+webpack.config.js
+yarn.lock

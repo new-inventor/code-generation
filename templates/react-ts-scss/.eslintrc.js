@@ -35,7 +35,6 @@ const config = {
     'import/no-extraneous-dependencies': [
       2,
       {
-        dependencies: ['fs'],
         devDependencies: [
           '**/*.test.js',
           '**/*.test.jsx',

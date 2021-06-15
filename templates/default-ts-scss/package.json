@@ -1,9 +1,8 @@
 {
-  "name": "@new-inventor/create-app",
+  "name": "some name",
   "version": "1.0.0",
-  "description": "create app from template",
+  "description": "",
   "main": "index.ts",
-  "repository": "git@github.com:new-inventor/bestretailer-admin-panel.git",
   "author": "George Ionov <newinventor20@gmail.com>",
   "license": "MIT",
   "scripts": {

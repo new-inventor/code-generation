@@ -1,0 +1,110 @@
+{
+  "name": "best-retailer-admin-panel",
+  "version": "1.0.0",
+  "description": "admin panel for best retailer poll",
+  "main": "index.tsx",
+  "repository": "git@github.com:new-inventor/bestretailer-admin-panel.git",
+  "author": "George Ionov <newinventor20@gmail.com>",
+  "license": "Proprietary",
+  "private": true,
+  "scripts": {
+    "start": "webpack serve --port 3000 --mode development --open --hot",
+    "build": "webpack --mode production --stats-children",
+    "code-style:fix": "yarn eslint:fix && yarn prettier:write && yarn stylelint:fix",
+    "stylelint": "stylelint './src/**/*{.css,.scss}'",
+    "stylelint:fix": "stylelint './src/**/*{.css,.scss}' --fix",
+    "eslint": "eslint --ext .jsx,.js,.ts,.tsx src/",
+    "eslint:fix": "eslint --ext .jsx,.js,.ts,.tsx --fix src/",
+    "prettier:write": "prettier --write src/",
+    "tsc": "tsc --noEmit --skipLibCheck",
+    "lint": "yarn eslint && yarn tsc"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "post-merge": "git-notify --prefix \"@all\" --color \"green\" merge $HUSKY_GIT_PARAMS",
+      "post-rewrite": "git-notify --prefix \"@all\" --color \"green\" rewrite $HUSKY_GIT_PARAMS",
+      "post-checkout": "git-notify --prefix \"@all\" --color \"green\" checkout $HUSKY_GIT_PARAMS"
+    }
+  },
+  "eslintConfig": {
+    "extends": "airbnb"
+  },
+  "lint-staged": {
+    "src/**/*.(jsx|js|ts|tsx)": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "src/**/*.(css|scss)": [
+      "stylelint --fix"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.5",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.14.5",
+    "@babel/preset-env": "^7.14.5",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.14.5",
+    "@types/react": "^17.0.11",
+    "@types/react-dom": "^17.0.7",
+    "@typescript-eslint/eslint-plugin": "^4.26.1",
+    "@typescript-eslint/parser": "^4.26.1",
+    "autoprefixer": "^10.2.6",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "copy-webpack-plugin": "^9.0.0",
+    "css-loader": "^5.2.6",
+    "eslint": "^7.28.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-typescript": "^12.3.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "file-loader": "^6.2.0",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.1",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "mini-css-extract-plugin": "^1.6.0",
+    "node-sass": "^6.0.0",
+    "postcss": "^8.3.1",
+    "postcss-loader": "^6.0.0",
+    "postcss-normalize": "^10.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.3.1",
+    "sass-loader": "^12.0.0",
+    "style-loader": "^2.0.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-prettier": "^1.2.0",
+    "stylelint-scss": "^3.19.0",
+    "typescript": "^4.3.2",
+    "webpack": "^5.38.1",
+    "webpack-bundle-analyzer": "^4.4.2",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
